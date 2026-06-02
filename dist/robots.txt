@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.kringloophetpareltje.nl/sitemap.xml
+Host: https://www.kringloophetpareltje.nl
