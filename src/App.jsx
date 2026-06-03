@@ -100,33 +100,24 @@ function App() {
   return (
     <div className="text-brown bg-cream">
      <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
-  <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-5 lg:px-8">
+  <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
     
-    {/* Logo groter, zonder tekst ernaast */}
-    <a href="#home" className="flex shrink-0 items-center" aria-label="Kringloop Het Pareltje home">
+    {/* Alleen logo, geen tekst ernaast */}
+    <a
+      href="#home"
+      className="flex shrink-0 items-center"
+      aria-label="Kringloop Het Pareltje home"
+    >
       <img
         src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
         alt="Kringloop Het Pareltje logo"
-        className="h-20 w-auto rounded-xl object-contain shadow-soft sm:h-24 md:h-28 lg:h-32"
+        className="h-28 w-auto rounded-xl object-contain shadow-soft sm:h-32 md:h-36 lg:h-40"
       />
     </a>
 
-    {/* Desktop navigatie compact */}
-    <nav className="hidden flex-1 flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4 lg:flex">
-      {navLinks.map((item) => (
-        <a
-          key={item.href}
-          href={item.href}
-          className="rounded-full px-2 py-1 text-[13px] font-medium text-brown transition hover:bg-white/70 hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold"
-        >
-          {item.label}
-        </a>
-      ))}
-    </nav>
-
-    {/* Desktop rechts: socials + WhatsApp */}
-    <div className="hidden items-center gap-3 lg:flex">
-      <div className="flex items-center gap-2">
+    {/* Rechterkant: socials + WhatsApp + hamburger */}
+    <div className="flex items-center gap-3">
+      <div className="hidden items-center gap-2 sm:flex">
         {socialLinks.map((item) => (
           <a
             key={item.label}
@@ -150,39 +141,38 @@ function App() {
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="whitespace-nowrap rounded-full bg-gold px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#a37330]"
+        className="hidden whitespace-nowrap rounded-full bg-gold px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#a37330] sm:inline-flex"
       >
         WhatsApp
       </a>
-    </div>
 
-    {/* Mobiel + iPad menu knop */}
-    <button
-      onClick={() => setMenuOpen((open) => !open)}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sand bg-white text-brown shadow-sm lg:hidden"
-      aria-label="Menu"
-      aria-expanded={menuOpen}
-    >
-      <span className="text-2xl">☰</span>
-    </button>
+      <button
+        onClick={() => setMenuOpen((open) => !open)}
+        className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-sand bg-white text-brown shadow-sm transition hover:bg-sand/40"
+        aria-label="Menu"
+        aria-expanded={menuOpen}
+      >
+        <span className="text-2xl">☰</span>
+      </button>
+    </div>
   </div>
 
-  {/* Mobiel + iPad menu */}
+  {/* Dropdown-menu voor computer, iPad en mobiel */}
   {menuOpen && (
-    <div className="border-t border-sand bg-cream/98 lg:hidden">
-      <div className="flex flex-col gap-4 px-6 py-5">
+    <div className="border-t border-sand bg-cream/98 shadow-soft">
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 lg:px-8">
         {navLinks.map((item) => (
           <a
             key={item.href}
             href={item.href}
             onClick={() => setMenuOpen(false)}
-            className="rounded-full bg-white/70 px-4 py-3 text-base font-medium text-brown shadow-sm transition hover:text-gold"
+            className="rounded-full bg-white/80 px-5 py-3 text-base font-medium text-brown shadow-sm transition hover:bg-sand/50 hover:text-gold"
           >
             {item.label}
           </a>
         ))}
 
-        <div className="flex items-center gap-3 pt-2">
+        <div className="flex items-center gap-3 pt-2 sm:hidden">
           {socialLinks.map((item) => (
             <a
               key={item.label}
@@ -206,7 +196,7 @@ function App() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-gold px-4 py-3 text-center text-sm font-semibold text-white shadow-soft"
+          className="rounded-full bg-gold px-5 py-3 text-center text-sm font-semibold text-white shadow-soft sm:hidden"
         >
           Neem contact op via WhatsApp
         </a>
@@ -214,6 +204,8 @@ function App() {
     </div>
   )}
 </header>
+
+       
 
       <main>
         <section id="home" className="relative overflow-hidden pb-12 pt-10 sm:pb-16">
