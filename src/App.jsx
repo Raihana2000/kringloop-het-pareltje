@@ -124,15 +124,21 @@ function App() {
             <div className="social-links">
               {socialLinks.map((item) => (
                 <a
-                  key={item.label}
-                  href={item.href}
-                  aria-label={item.aria}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`social-button ${item.className}`}
-                >
-                  {item.icon}
-                </a>
+                 key={item.label}
+                 href={item.href}
+                 aria-label={item.aria}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className={`social-button ${item.className}`}
+                 onClick={(e) => {
+                  if (item.label === 'Facebook') {
+                   e.preventDefault()
+                   window.open(item.href, '_blank', 'noopener,noreferrer')
+              }
+           }}
+      >
+             {item.icon}
+           </a>
               ))}
             </div>
           </div>
@@ -456,15 +462,21 @@ function App() {
                   <div className="social-links mt-4">
                     {socialLinks.map((item) => (
                       <a
-                        key={item.label}
-                        href={item.href}
-                        aria-label={item.aria}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`social-button ${item.className}`}
-                      >
-                        {item.icon}
-                      </a>
+                  key={item.label}
+                  href={item.href}
+                  aria-label={item.aria}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`social-button ${item.className}`}
+                  onClick={(e) => {
+                   if (item.label === 'Facebook') {
+                    e.preventDefault()
+                    window.open(item.href, '_blank', 'noopener,noreferrer')
+                    }
+                     }}
+                        >        
+                   {item.icon}
+                     </a>
                     ))}
                   </div>
                 </div>
@@ -518,16 +530,22 @@ function App() {
               </a>
               <div className="social-links">
                 {socialLinks.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    aria-label={item.aria}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`social-button ${item.className}`}
-                  >
-                    {item.icon}
-                  </a>
+                 <a
+                  key={item.label}
+                  href={item.href}
+                  aria-label={item.aria}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`social-button ${item.className}`}
+                  onClick={(e) => {
+                   if (item.label === 'Facebook') {
+                    e.preventDefault()
+                    window.open(item.href, '_blank', 'noopener,noreferrer')
+              }
+                    }}
+                      >
+                   {item.icon}
+                      </a>
                 ))}
               </div>
             </div>
