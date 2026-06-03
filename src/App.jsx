@@ -100,16 +100,16 @@ function App() {
   return (
     <div className="text-brown bg-cream">
       <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto_auto] items-center gap-6 px-6 py-4 lg:px-8">
           <a href="#home" className="flex items-center gap-3 md:gap-4">
             <img 
               src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
               alt="Kringloop Het Pareltje logo" 
-              className="h-12 md:h-16 w-auto object-contain rounded-lg shadow-soft"
+             className="h-8 md:h-10 w-auto object-contain rounded-lg shadow-soft"
             />
-            <span className="font-display text-2xl font-semibold tracking-tight text-cocoa">Het Pareltje</span>
+            <span className="font-display text-xl font-semibold tracking-tight text-cocoa">Het Pareltje</span>
           </a>
-          <nav className="hidden items-center gap-8 md:flex">
+            <nav className="hidden items-center justify-center gap-6 md:flex">
             {navLinks.map((item) => (
               <a
                 key={item.href}
@@ -120,7 +120,7 @@ function App() {
               </a>
             ))}
           </nav>
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center justify-center gap-3 md:flex">
             <div className="social-links">
               {socialLinks.map((item) => (
                 <a
@@ -141,7 +141,7 @@ function App() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden rounded-full bg-gold px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-[#a37330] md:inline-flex"
+              className="hidden whitespace-nowrap rounded-full bg-gold px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-[#a37330] md:inline-flex"
             >
               Neem contact op via WhatsApp
             </a>
@@ -215,8 +215,8 @@ function App() {
 
             <div className="hero">
               <div className="space-y-4">
-                <p className="text-sm uppercase tracking-[0.24em] text-sand">Lokaal en vertrouwd</p>
-                <h2 className="font-display text-2xl font-semibold text-cocoa">Warm, persoonlijk en dichtbij</h2>
+                <p className="text-sm uppercase tracking-[0.24em]text-x text-sand">Lokaal en vertrouwd</p>
+                <h2 className="font-display  font-semibold text-cocoa">Warm, persoonlijk en dichtbij</h2>
                 <p className="text-sm leading-7 text-[#5c4a3b]">
                   Het Pareltje biedt een vriendelijke winkelbeleving in Halfweg met een wisselend aanbod aan duurzame tweedehands spullen.
                 </p>
@@ -240,7 +240,7 @@ function App() {
                 key={item.title}
                 className="group rounded-3xl border border-sand bg-white/90 p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-xl"
               >
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sand text-2xl transition group-hover:bg-gold">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sand text-xl transition group-hover:bg-gold">
                   {item.icon}
                 </div>
                 <h3 className="font-semibold text-xl text-cocoa">{item.title}</h3>

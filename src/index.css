@@ -263,3 +263,12 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+.social-links {
+  flex-wrap: nowrap;
+}
+
+.social-button {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+}
