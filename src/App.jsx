@@ -99,93 +99,121 @@ function App() {
 
   return (
     <div className="text-brown bg-cream">
-      <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
-        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-5 sm:gap-6 md:py-6 lg:px-8">
-          <a href="#home" className="flex items-center gap-3 md:gap-4">
-            <img 
-              src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
-              alt="Kringloop Het Pareltje logo" 
-             className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain rounded-lg shadow-soft"
-            />
-            <span className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-cocoa">Het Pareltje</span>
-          </a>
-            <nav className="hidden items-center justify-center gap-6 md:flex">
-            {navLinks.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm text-brown transition hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <div className="hidden items-center justify-center gap-3 md:flex">
-            <div className="social-links">
-              {socialLinks.map((item) => (
-                <a
-                 key={item.label}
-                 href={item.href}
-                 aria-label={item.aria}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className={`social-button ${item.className}`}
-                 onClick={(e) => {
-                  if (item.label === 'Facebook') {
-                   e.preventDefault()
-                   window.open(item.href, '_blank', 'noopener,noreferrer')
+     <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
+  <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-5 lg:px-8">
+    
+    {/* Logo groter, zonder tekst ernaast */}
+    <a href="#home" className="flex shrink-0 items-center" aria-label="Kringloop Het Pareltje home">
+      <img
+        src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
+        alt="Kringloop Het Pareltje logo"
+        className="h-20 w-auto rounded-xl object-contain shadow-soft sm:h-24 md:h-28 lg:h-32"
+      />
+    </a>
+
+    {/* Desktop navigatie compact */}
+    <nav className="hidden flex-1 flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4 lg:flex">
+      {navLinks.map((item) => (
+        <a
+          key={item.href}
+          href={item.href}
+          className="rounded-full px-2 py-1 text-[13px] font-medium text-brown transition hover:bg-white/70 hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    {/* Desktop rechts: socials + WhatsApp */}
+    <div className="hidden items-center gap-3 lg:flex">
+      <div className="flex items-center gap-2">
+        {socialLinks.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            aria-label={item.aria}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`social-button ${item.className}`}
+            onClick={(e) => {
+              if (item.href === '#') {
+                e.preventDefault()
               }
-           }}
+            }}
+          >
+            {item.icon}
+          </a>
+        ))}
+      </div>
+
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whitespace-nowrap rounded-full bg-gold px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#a37330]"
       >
-             {item.icon}
-           </a>
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
+        WhatsApp
+      </a>
+    </div>
+
+    {/* Mobiel + iPad menu knop */}
+    <button
+      onClick={() => setMenuOpen((open) => !open)}
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sand bg-white text-brown shadow-sm lg:hidden"
+      aria-label="Menu"
+      aria-expanded={menuOpen}
+    >
+      <span className="text-2xl">☰</span>
+    </button>
+  </div>
+
+  {/* Mobiel + iPad menu */}
+  {menuOpen && (
+    <div className="border-t border-sand bg-cream/98 lg:hidden">
+      <div className="flex flex-col gap-4 px-6 py-5">
+        {navLinks.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            onClick={() => setMenuOpen(false)}
+            className="rounded-full bg-white/70 px-4 py-3 text-base font-medium text-brown shadow-sm transition hover:text-gold"
+          >
+            {item.label}
+          </a>
+        ))}
+
+        <div className="flex items-center gap-3 pt-2">
+          {socialLinks.map((item) => (
             <a
-              href={whatsappLink}
+              key={item.label}
+              href={item.href}
+              aria-label={item.aria}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden whitespace-nowrap rounded-full bg-gold px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-[#a37330] md:inline-flex"
+              className={`social-button ${item.className}`}
+              onClick={(e) => {
+                if (item.href === '#') {
+                  e.preventDefault()
+                }
+              }}
             >
-              Neem contact op via WhatsApp
+              {item.icon}
             </a>
-            <button
-              onClick={() => setMenuOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sand bg-white text-brown shadow-sm md:hidden"
-              aria-label="Menu"
-              aria-expanded={menuOpen}
-            >
-              <span className="text-xl">☰</span>
-            </button>
-          </div>
+          ))}
         </div>
-        {menuOpen && (
-          <div className="border-t border-sand bg-cream/98 md:hidden">
-            <div className="flex flex-col gap-4 px-6 py-5">
-              {navLinks.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-base text-brown transition hover:text-gold"
-                >
-                  {item.label}
-                </a>
-              ))}
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-gold px-4 py-3 text-sm font-semibold text-white shadow-soft text-center"
-              >
-                Neem contact op via WhatsApp
-              </a>
-            </div>
-          </div>
-        )}
-      </header>
+
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-gold px-4 py-3 text-center text-sm font-semibold text-white shadow-soft"
+        >
+          Neem contact op via WhatsApp
+        </a>
+      </div>
+    </div>
+  )}
+</header>
 
       <main>
         <section id="home" className="relative overflow-hidden pb-12 pt-10 sm:pb-16">
