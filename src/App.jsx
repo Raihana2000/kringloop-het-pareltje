@@ -111,7 +111,7 @@ function App() {
       <img
         src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
         alt="Kringloop Het Pareltje logo"
-        className="h-32 w-64 rounded-xl object-contain object-center shadow-soft sm:h-36 sm:w-72 md:h-44 md:w-80 lg:h-48 lg:w-96 xl:h-52 xl:w-[420px]"
+       className="h-32 w-80 rounded-xl object-contain object-center shadow-soft sm:h-36 sm:w-96 md:h-40 md:w-[460px] lg:h-44 lg:w-[520px] xl:h-48 xl:w-[560px]"
       />
     </a>
 
