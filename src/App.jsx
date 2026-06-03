@@ -100,14 +100,14 @@ function App() {
   return (
     <div className="text-brown bg-cream">
       <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
-        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto_auto] items-center gap-6 px-6 py-4 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-5 sm:gap-6 md:py-6 lg:px-8">
           <a href="#home" className="flex items-center gap-3 md:gap-4">
             <img 
               src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
               alt="Kringloop Het Pareltje logo" 
-             className="h-8 md:h-10 w-auto object-contain rounded-lg shadow-soft"
+             className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain rounded-lg shadow-soft"
             />
-            <span className="font-display text-xl font-semibold tracking-tight text-cocoa">Het Pareltje</span>
+            <span className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-cocoa">Het Pareltje</span>
           </a>
             <nav className="hidden items-center justify-center gap-6 md:flex">
             {navLinks.map((item) => (
