@@ -102,18 +102,16 @@ function App() {
      <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
   <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
     
-    {/* Alleen logo, geen tekst ernaast */}
-    <a
-      href="#home"
-      className="flex shrink-0 items-center"
-      aria-label="Kringloop Het Pareltje home"
-    >
-      <img
-        src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
-        alt="Kringloop Het Pareltje logo"
-       className="h-32 w-80 rounded-xl object-contain object-center shadow-soft sm:h-36 sm:w-96 md:h-40 md:w-[460px] lg:h-44 lg:w-[520px] xl:h-48 xl:w-[560px]"
-      />
-    </a>
+{/* Tekstlogo */}
+<a
+  href="#home"
+  className="flex shrink-0 items-center"
+  aria-label="Kringloop Het Pareltje home"
+>
+  <span className="font-display text-3xl font-semibold text-cocoa sm:text-4xl">
+    Het Pareltje
+  </span>
+</a>
 
     {/* Rechterkant: socials + WhatsApp + hamburger */}
     <div className="flex items-center gap-3">
