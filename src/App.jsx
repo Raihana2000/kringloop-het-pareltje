@@ -101,8 +101,13 @@ function App() {
     <div className="text-brown bg-cream">
       <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <a href="#home" className="font-display text-2xl font-semibold tracking-tight text-cocoa">
-            Het Pareltje
+          <a href="#home" className="flex items-center gap-3 md:gap-4">
+            <img 
+              src="/images/logo-pareltje.jpeg.jpeg" 
+              alt="Kringloop Het Pareltje logo" 
+              className="h-12 md:h-16 w-auto object-contain rounded-lg shadow-soft"
+            />
+            <span className="font-display text-2xl font-semibold tracking-tight text-cocoa">Het Pareltje</span>
           </a>
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((item) => (
