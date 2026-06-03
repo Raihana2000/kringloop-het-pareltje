@@ -100,7 +100,7 @@ function App() {
   return (
     <div className="text-brown bg-cream">
      <header className="sticky top-0 z-50 border-b border-b-sand/80 bg-cream/95 backdrop-blur-md">
-  <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+  <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
     
     {/* Alleen logo, geen tekst ernaast */}
     <a
@@ -111,7 +111,7 @@ function App() {
       <img
         src={`${import.meta.env.BASE_URL}images/logo-pareltje.jpeg`}
         alt="Kringloop Het Pareltje logo"
-        className="h-28 w-auto rounded-xl object-contain shadow-soft sm:h-32 md:h-36 lg:h-40"
+        className="h-40 w-auto rounded-xl object-cover shadow-soft sm:h-44 md:h-52 lg:h-60 xl:h-64"
       />
     </a>
 
