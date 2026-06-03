@@ -103,7 +103,7 @@ function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <a href="#home" className="flex items-center gap-3 md:gap-4">
             <img 
-              src="/images/logo-pareltje.jpeg" 
+              src="images/logo-pareltje.jpeg" 
               alt="Kringloop Het Pareltje logo" 
               className="h-12 md:h-16 w-auto object-contain rounded-lg shadow-soft"
             />
