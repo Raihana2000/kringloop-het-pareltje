@@ -69,16 +69,11 @@ const socialLinks = [
     )
   },
   {
-  label: "Instagram",
-  href: "https://www.instagram.com/kringloophetpareltje01/",
-  aria: "Instagram",
-  className: "social-button--instagram",
-  icon: (
-    <svg>
-      ...
-    </svg>
-  )
-},
+    label: 'Instagram',
+    href: 'https://www.instagram.com/kringloophetpareltje01/',
+    aria: 'Instagram van Kringloop Het Pareltje',
+    className: 'social-button--instagram',
+    icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="white" strokeWidth="1.8" />
         <path d="M12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z" stroke="white" strokeWidth="1.8" />
@@ -87,17 +82,17 @@ const socialLinks = [
     )
   },
   {
-  label: "TikTok",
-  href: "https://www.tiktok.com/@Kringloophetpareltje01",
-  aria: "TikTok",
-  className: 'social-button--tiktok',
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@Kringloophetpareltje01',
+    aria: 'TikTok van Kringloop Het Pareltje',
+    className: 'social-button--tiktok',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M19.32 5.26c-1.37-.77-2.26-2.21-2.42-3.76h-2.06v13.62c0 1.04-.84 1.88-1.88 1.88-1.04 0-1.88-.84-1.88-1.88 0-1.04.84-1.88 1.88-1.88.24 0 .48.04.71.13v-2.08c-.23-.02-.47-.04-.71-.04-2.49 0-4.51 2.02-4.51 4.51 0 2.49 2.02 4.51 4.51 4.51 2.49 0 4.51-2.02 4.51-4.51V8.08c.89.65 1.99 1.04 3.18 1.04v-2.06c-.66 0-1.29-.14-1.87-.4v-.4z" />
       </svg>
     )
   }
-]
+];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
