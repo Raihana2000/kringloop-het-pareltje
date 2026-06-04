@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Over ons', href: '#about' },
-  { label: 'Aanbod', href: '#offers' },
+  { label: 'Aanbod', href: '#aanbod' },
   { label: 'Inbreng', href: '#inbreng' },
   { label: 'Ophaalservice', href: '#ophaalservice' },
   { label: 'Openingstijden', href: '#hours' },
@@ -46,6 +46,29 @@ const galleryImages = [
   { src: '/images/Hero-woonkamer.jpeg', alt: 'Tweedehands meubels en woonkamerinrichting bij Kringloop Het Pareltje in Amsterdam' },
   { src: '/images/Over-ons-kroonluchter.jpeg', alt: 'Kroonluchter en verlichting - unieke verlichting bij Kringloop Het Pareltje' },
   { src: '/images/Overons-glaswerk.jpeg', alt: 'Decoratief glaswerk en servies bij Kringloop Het Pareltje' }
+]
+ 
+const aanbodItems = [
+  {
+    title: 'Vintage meubels met karakter',
+    src: '/images/Hero-woonkamer.jpeg',
+    text: 'Ontdek betaalbare tweedehands meubels die direct warmte en sfeer brengen in huis. Elk meubelstuk heeft een eigen verhaal en past perfect bij mensen die duurzaam willen wonen zonder standaard interieur.'
+  },
+  {
+    title: 'Vazen, bloemen en woondecoratie',
+    src: '/images/Hero-bloemen.jpeg',
+    text: 'Van decoratieve vazen tot sfeervolle woonaccessoires: bij Het Pareltje vindt u kleine details die een kamer meteen gezelliger maken.'
+  },
+  {
+    title: 'Kroonluchters en bijzondere verlichting',
+    src: '/images/Over-ons-kroonluchter.jpeg',
+    text: 'Verlichting bepaalt de sfeer in huis. Onze wisselende collectie lampen en kroonluchters geeft uw interieur karakter, klasse en een warme uitstraling.'
+  },
+  {
+    title: 'Glaswerk, servies en unieke vondsten',
+    src: '/images/Overons-glaswerk.jpeg',
+    text: 'Mooi glaswerk, servies en decoratieve items voor mensen die houden van bijzondere spullen met charme. Kom langs of vraag via WhatsApp naar de actuele voorraad.'
+  }
 ]
 
 const whatsappLink =
@@ -93,9 +116,147 @@ const socialLinks = [
     )
   }
 ];
+function AanbodPage() {
+  return (
+    <div className="min-h-screen bg-cream text-brown">
+      <header className="border-b border-sand bg-cream/95 px-6 py-5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+          <a href="#home" className="font-display text-3xl font-semibold text-cocoa">
+            Het Pareltje
+          </a>
 
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-gold px-5 py-3 text-sm font-semibold text-white shadow-soft"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+          <a href="#home" className="mb-8 inline-block text-sm font-semibold text-brown hover:text-gold">
+            ← Terug naar home
+          </a>
+
+          <p className="text-sm uppercase tracking-[0.24em] text-brown">
+            Ons aanbod
+          </p>
+
+          <h1 className="mt-4 max-w-4xl font-display text-4xl font-semibold leading-tight text-cocoa sm:text-5xl lg:text-6xl">
+            Tweedehands pareltjes voor elk interieur
+          </h1>
+
+          <p className="mt-6 max-w-3xl text-base leading-8 text-[#4d3e2f] sm:text-lg">
+            Bij Kringloop Het Pareltje vindt u een wisselend aanbod aan meubels,
+            woondecoratie, glaswerk, verlichting, servies en vintage vondsten.
+            Het aanbod verandert regelmatig, dus ziet u iets moois? Stuur gerust
+            direct een WhatsApp bericht.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-brown px-7 py-3 text-sm font-semibold text-cream shadow-soft transition hover:bg-[#352318]"
+            >
+              Vraag naar beschikbaarheid
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full border border-brown bg-white px-7 py-3 text-sm font-semibold text-brown shadow-soft transition hover:border-gold hover:text-gold"
+            >
+              Contactgegevens bekijken
+            </a>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+          <div className="grid gap-8 md:grid-cols-2">
+            {aanbodItems.map((item) => (
+              <article
+                key={item.title}
+                className="overflow-hidden rounded-[32px] border border-sand bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  loading="lazy"
+                  className="h-80 w-full object-cover"
+                />
+
+                <div className="p-6">
+                  <h2 className="font-display text-2xl font-semibold text-cocoa">
+                    {item.title}
+                  </h2>
+
+                  <p className="mt-4 text-sm leading-7 text-[#5c4a3b]">
+                    {item.text}
+                  </p>
+
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex rounded-full bg-gold px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#a37330]"
+                  >
+                    Interesse? Stuur WhatsApp
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-t border-sand bg-[#f7f0e7] px-6 py-14">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-display text-3xl font-semibold text-cocoa sm:text-4xl">
+              Ziet u iets moois of zoekt u iets specifieks?
+            </h2>
+
+            <p className="mt-5 text-sm leading-7 text-[#5c4a3b]">
+              Stuur gerust een WhatsApp bericht. Omdat het aanbod steeds wisselt,
+              is snel reageren vaak slim. Wij denken graag met u mee.
+            </p>
+
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex rounded-full bg-brown px-7 py-3 text-sm font-semibold text-cream shadow-soft transition hover:bg-[#352318]"
+            >
+              Direct WhatsApp sturen
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [page, setPage] = useState(window.location.hash)
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setPage(window.location.hash)
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange)
+    }
+  }, [])
+
+  if (page === '#aanbod') {
+    return <AanbodPage />
+  }
 
   return (
     <div className="text-brown bg-cream">
@@ -221,7 +382,7 @@ function App() {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="#offers"
+                  href="#aanbod"
                   className="inline-flex items-center justify-center rounded-full bg-brown px-7 py-3 text-sm font-semibold text-cream shadow-soft transition hover:-translate-y-0.5 hover:bg-[#352318]"
                 >
                   Bekijk ons aanbod
@@ -572,7 +733,7 @@ function App() {
             <nav className="flex flex-wrap gap-4 text-sm text-[#5c4a3b]">
               <a href="#home" className="hover:text-gold">Home</a>
               <a href="#about" className="hover:text-gold">Over ons</a>
-              <a href="#offers" className="hover:text-gold">Aanbod</a>
+              <a href="#aanbod" className="hover:text-gold">Aanbod</a>
               <a href="#inbreng" className="hover:text-gold">Inbreng</a>
               <a href="#ophaalservice" className="hover:text-gold">Ophaalservice</a>
               <a href="#contact" className="hover:text-gold">Contact</a>
