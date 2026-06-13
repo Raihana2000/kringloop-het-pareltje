@@ -739,7 +739,20 @@ function App() {
               <a href="#contact" className="hover:text-gold">Contact</a>
             </nav>
           </div>
-        </div>
+                  <div className="mt-8 border-t border-sand pt-6 text-center">
+            <p className="text-sm text-[#5c4a3b]">
+              Digitale presentatie & website door{" "}
+              <a
+                href="https://www.reldio.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-cocoa underline decoration-gold underline-offset-4 transition hover:text-gold"
+              >
+                Reldio
+              </a>
+            </p>
+          </div>
+        </div> 
       </footer>
 
       <a
