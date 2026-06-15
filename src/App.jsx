@@ -82,7 +82,7 @@ const mapsEmbed =
 const socialLinks = [
   {
     label: 'Facebook',
-    href: 'https://www.facebook.com/profile.php?id=100009692773632',
+    href: 'https://www.facebook.com/kringloophalfzwaan/?notif_id=1781097853988362&notif_t=page_user_activity&ref=notif
     aria: 'Facebook van Kringloop Het Pareltje',
     className: 'social-button--facebook',
     icon: (
